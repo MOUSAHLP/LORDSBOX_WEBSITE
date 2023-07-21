@@ -1,10 +1,10 @@
-/********** Template CSS **********/
 :root {
-    --primary: #06A3DA;
+    --primary: #585be6;
     --secondary: #34AD54;
     --light: #EEF9FF;
     --dark: #091E3E;
 }
+
 
 
 /*** Spinner ***/
@@ -58,6 +58,18 @@
 }
 
 
+/* ** p tag ** */
+@media(max-width:600px){
+    p{
+        font-size: 14px;
+    }
+}
+@media(max-width:400px){
+    p{
+        font-size: 13px;
+    }
+}
+
 /*** Heading ***/
 h1,
 h2,
@@ -76,6 +88,10 @@ h6,
 .fw-medium {
     font-weight: 600 !important;
 }
+.my-heading{
+    color: var(--primary);
+    font-weight: bold;
+}
 
 
 /*** Button ***/
@@ -89,6 +105,8 @@ h6,
 .btn-secondary {
     color: #FFFFFF;
     box-shadow: inset 0 0 0 50px transparent;
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
 .btn-primary:hover {
@@ -125,6 +143,10 @@ h6,
 
 
 /*** Navbar ***/
+.admin-icon{
+    color:var(--primary);
+    cursor: pointer;
+}
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Nunito', sans-serif;
     position: relative;
@@ -214,6 +236,66 @@ h6,
         color: var(--primary);
     }
 }
+.navbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 1.5rem !important;
+}
+.nav-header{
+    display: flex;
+    align-items: center;
+}
+
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs .page-header {
+    padding: 140px 0 80px 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .breadcrumbs nav {
+    background-color: #f3f6fc;
+    padding: 20px 0;
+  }
+  
+  .breadcrumbs nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-secondary);
+  }
+  
+  .breadcrumbs nav ol a {
+    color: var(--primary);
+    transition: 0.3s;
+  }
+  
+  .breadcrumbs nav ol a:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumbs nav ol li+li {
+    padding-left: 10px;
+  }
+  
+  .breadcrumbs nav ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #4278cc;
+    content: "/";
+  }
 
 /* landing */
 @media(max-width:700px){
@@ -222,12 +304,62 @@ h6,
     }
 }
 
+
+/*** Features ***/
+
+.sections{}
+
+.sections .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+
+.sections .container .section-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 0px #eee;
+    cursor: pointer;
+}
+.sections .container .section-item .section-icon{
+    background-color: var(--primary);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.sections .container .section-item .section-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sections .container .section-item .section-content h2{
+    margin: 20px;
+}
+
+.sections .container .section-item .section-content p{
+    color: #6B6A75;
+    text-align: center;
+}
+
+
 /*** Features ***/
 .box{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+
+@media(max-width:600px){
+    .box{
+        font-size: 16px;
+    }
 }
 
 .my-p{
@@ -388,9 +520,24 @@ h6,
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 15px;
+    bottom: 100px;
     z-index: 99;
+}
+
+.our-app{
+    position: fixed;
+    right: 15px;
+    bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    color: white;
+    padding: 5px;
+}
+.our-app:hover{
+    color: white !important;
 }
 
 .bg-header {
@@ -422,3 +569,5 @@ h6,
 .footer-p{
     color: white;
 }
+
+  
